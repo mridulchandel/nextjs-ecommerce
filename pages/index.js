@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import baseUrl from "../helpers/baseUrl";
 import styles from "../styles/Home.module.css";
@@ -12,7 +13,11 @@ const index = ({ products }) => {
         <div className={cardContainer}>
           <div className="card">
             <div className={`card-image ${cardImageContainer}`}>
-              <img src={product.mediaUrl} className={cardImage} />
+              <Image
+                src={product.mediaUrl}
+                className={cardImage}
+                layout="fill"
+              />
               <span className="card-title">{product.name}</span>
             </div>
             <div className="card-content">
