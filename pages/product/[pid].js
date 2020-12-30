@@ -1,6 +1,5 @@
 import { useState, useCallback, useRef, useEffect } from "react";
 import { useRouter } from "next/router";
-import Image from "next/image";
 import { parseCookies } from "nookies";
 import Cookie from "js-cookie";
 
@@ -84,7 +83,7 @@ const Product = ({ product }) => {
   return (
     <div className="container center-align">
       <h3 style={{ textTransform: "capitalize" }}>{product.name}</h3>
-      <Image
+      <img
         src={product.mediaUrl}
         alt="Product Image"
         width={300}
