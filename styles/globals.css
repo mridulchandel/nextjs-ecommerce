@@ -6,11 +6,15 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 * {
   box-sizing: border-box;
+}
+
+nav {
+  background-color: #1565c0;
+}
+
+input:focus {
+  border-bottom: 1px solid #1565c0 !important;
+  box-shadow: 0 1px 0 0 #1565c0 !important;
 }

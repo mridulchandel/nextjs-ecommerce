@@ -1,0 +1,15 @@
+.cart {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 40rem;
+  margin: 2rem 0;
+}
+
+.cart_detail {
+  margin-left: 2rem;
+}
+
+.cart_checkout {
+  display: flex;
+  justify-content: space-between;
+}
