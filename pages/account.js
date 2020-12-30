@@ -17,8 +17,6 @@ const Account = ({ error, orders }) => {
     M.Collapsible.init(orderRef.current);
   }, []);
 
-  console.log(orders, "orders");
-
   const OrderHistory = () => {
     return (
       <ul className="collapsible" ref={orderRef}>

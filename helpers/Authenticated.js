@@ -11,7 +11,6 @@ export default function Authenticated(Component) {
       req.userId = userId;
       return Component(req, res);
     } catch (err) {
-      console.log(err, "Error while fetching cart");
       return res.status(401).json({ error: "You must login." });
     }
   };

@@ -7,7 +7,6 @@ const Product = () => {
 };
 
 export async function getStaticProps({ query }) {
-  console.log(query);
   return {
     props: {},
   };

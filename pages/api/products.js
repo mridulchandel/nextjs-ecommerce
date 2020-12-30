@@ -21,10 +21,8 @@ export default async (req, res) => {
 const getAllProducts = async (req, res) => {
   try {
     const products = await Product.find();
-    return res.status(200).json(products);
-  } catch (error) {
-    console.log(error);
-  }
+    res.status(200).json(products);
+  } catch (error) {}
 };
 
 const saveProduct = async (req, res) => {
@@ -45,6 +43,5 @@ const saveProduct = async (req, res) => {
     res.status(201).json(product);
   } catch (err) {
     res.status(500).json({ error: "Internal Server Error" });
-    console.log(err);
   }
 };

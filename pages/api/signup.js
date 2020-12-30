@@ -30,10 +30,6 @@ export default async (req, res) => {
 
     await new Cart({ user: newUser._id }).save();
 
-    console.log(newUser);
-
     res.status(201).json({ message: "Signup Successful" });
-  } catch (err) {
-    console.log(err, "Error while creating user");
-  }
+  } catch (err) {}
 };

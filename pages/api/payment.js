@@ -65,7 +65,6 @@ export default async (req, res) => {
 
     res.status(200).json({ message: "Payment successful" });
   } catch (err) {
-    console.log(err, "Error while fetching cart");
     return res.status(401).json({ error: "Error processing payment" });
   }
 };

@@ -33,7 +33,7 @@ const addProduct = Authenticated(async (req, res) => {
   const productIndex = cart.products.findIndex((item) =>
     item.product.equals(productId)
   );
-  console.log(productIndex);
+  productIndex;
   if (productIndex > -1) {
     await Cart.findOneAndUpdate(
       { _id: cart._id, "products.product": productId },
@@ -60,6 +60,5 @@ const deleteProduct = Authenticated(async (req, res) => {
     },
     { new: true }
   ).populate("products.product");
-  console.log(cart, "Deleted Cart");
   res.status(201).json(cart.products);
 });

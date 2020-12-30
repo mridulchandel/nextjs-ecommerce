@@ -21,7 +21,6 @@ const Cart = ({ error, products }) => {
   let total = 0;
 
   const handleRemove = async (productId) => {
-    console.log(productId, "clicked");
     const res = await fetch(`${baseUrl}cart`, {
       method: "DELETE",
       headers: {
@@ -33,7 +32,6 @@ const Cart = ({ error, products }) => {
       }),
     });
     const res2 = await res.json();
-    console.log(res2);
     setProductData(res2);
   };
 
@@ -169,7 +167,6 @@ export async function getServerSideProps(ctx) {
       },
     };
   }
-  console.log(products);
   return {
     props: { products },
   };

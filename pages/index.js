@@ -31,7 +31,17 @@ const index = ({ products }) => {
   return <div className={rootcard}>{productsList}</div>;
 };
 
-export async function getStaticProps(context) {
+// export async function getStaticProps(context) {
+//   const res = await fetch(`${baseUrl}products`);
+//   const data = await res.json();
+//   return {
+//     props: {
+//       products: data,
+//     },
+//   };
+// }
+
+export async function getServerSideProps(context) {
   const res = await fetch(`${baseUrl}products`);
   const data = await res.json();
   return {

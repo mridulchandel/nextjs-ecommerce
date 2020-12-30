@@ -48,10 +48,8 @@ const UserRoles = () => {
         }
         return user;
       });
-      console.log(modifiedUsers);
       setUsers(modifiedUsers);
     }
-    console.log(res2);
   };
   return (
     <>

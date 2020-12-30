@@ -52,9 +52,7 @@ const Create = () => {
         M.toast({ html: "Product Saved", classes: "green" });
         router.replace("/");
       }
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   };
 
   return (
@@ -118,7 +116,7 @@ export async function getServerSideProps(ctx) {
   if (!user) {
     res.writeHead(302, { Location: "/login" });
     res.end();
-  } else if (user.role !== "admin") {
+  } else if (user.role === "user") {
     res.writeHead(302, { Location: "/account" });
     res.end();
   }

@@ -35,7 +35,5 @@ export default async (req, res) => {
     }
 
     res.status(201).json({ message: "Signup Successful" });
-  } catch (err) {
-    console.log(err, "Error while login");
-  }
+  } catch (err) {}
 };
