@@ -130,27 +130,27 @@ const Product = ({ product }) => {
   );
 };
 
-// export async function getStaticPaths() {
-//   return {
-//     paths: [{ params: { pid: "5fe58e8974b4ca79110122e9" } }],
-//     fallback: true,
-//   };
-// }
+export async function getStaticPaths() {
+  return {
+    paths: [{ params: { pid: "5fe58e8974b4ca79110122e9" } }],
+    fallback: true,
+  };
+}
 
-// export async function getStaticProps({ params: { pid } }) {
-//   const res = await fetch(`${baseUrl}product/${pid}`);
-//   const product = await res.json();
-//   return {
-//     props: { product },
-//   };
-// }
-
-export async function getServerSideProps({ params: { pid } }) {
-  const res = await fetch(`http://localhost:3000/api/product/${pid}`);
+export async function getStaticProps({ params: { pid } }) {
+  const res = await fetch(`${baseUrl}product/${pid}`);
   const product = await res.json();
   return {
     props: { product },
   };
 }
+
+// export async function getServerSideProps({ params: { pid } }) {
+//   const res = await fetch(`http://localhost:3000/api/product/${pid}`);
+//   const product = await res.json();
+//   return {
+//     props: { product },
+//   };
+// }
 
 export default Product;
