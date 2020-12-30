@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 
 function initDB() {
   if (mongoose.connections[0].readyState) {
+    console.log("Already connected");
     return;
   }
   mongoose.connect(process.env.MONGO_URI, {
@@ -11,8 +12,12 @@ function initDB() {
     useUnifiedTopology: true,
   });
   const db = mongoose.connection;
-  db.on("connected", () => {});
-  db.on("error", (err) => {});
+  db.on("connected", () => {
+    console.log("connected to mongo");
+  });
+  db.on("error", (err) => {
+    console.log("error connecting", err);
+  });
 }
 
 export default initDB;
