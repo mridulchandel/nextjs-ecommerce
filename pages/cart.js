@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/Image";
 import { parseCookies } from "nookies";
 import Cookies from "js-cookie";
 import { useRouter } from "next/router";
@@ -81,7 +82,7 @@ const Cart = ({ error, products }) => {
           total += item.product.price * item.quantity;
           return (
             <div className={cart} key={item._id}>
-              <img
+              <Image
                 src={item.product.mediaUrl}
                 alt="Product Image"
                 width={300}
