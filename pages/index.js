@@ -20,7 +20,7 @@ const index = ({ products }) => {
             </div>
             <div className="card-action">
               <Link href={`/product/${product._id}`}>
-                <a>This is a link</a>
+                <a>VIEW PRODUCT</a>
               </Link>
             </div>
           </div>
@@ -31,17 +31,7 @@ const index = ({ products }) => {
   return <div className={rootcard}>{productsList}</div>;
 };
 
-// export async function getStaticProps(context) {
-//   const res = await fetch(`${baseUrl}products`);
-//   const data = await res.json();
-//   return {
-//     props: {
-//       products: data,
-//     },
-//   };
-// }
-
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const res = await fetch(`${baseUrl}products`);
   const data = await res.json();
   return {
@@ -50,5 +40,15 @@ export async function getServerSideProps(context) {
     },
   };
 }
+
+// export async function getServerSideProps(context) {
+//   const res = await fetch(`${baseUrl}products`);
+//   const data = await res.json();
+//   return {
+//     props: {
+//       products: data,
+//     },
+//   };
+// }
 
 export default index;
