@@ -1,6 +1,5 @@
 .cardImageContainer {
   height: 80vw;
-  width: 100vw;
 }
 
 @media (min-width: 600px) {
